@@ -7,6 +7,8 @@ Preserving all belongings of the foundational roadmap curriculum provided by ***
 - Homeworks and Assignments 
 - Projects 
 - Notes and Advices.
+---
+![Screen shot for the foundations and specializatiob roadmap](https://cdn.fs.teachablecdn.com/oQ1J1p0FRJmJ86YPPKrr)
 
 ---
 
