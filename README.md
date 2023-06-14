@@ -10,7 +10,7 @@ Preserving all belongings of the foundational roadmap curriculum provided by ***
 
 ---
 
-*studied from [ProgrammingAdvices](https://programmingadvices.com/p/roadmap) ~ by Prof.* [Mohammed Abu-Hadhoud](https://www.linkedin.com/in/metwally/) \
+*studied from [ProgrammingAdvices](https://programmingadvices.com/p/roadmap) ~ by Prof.* [Mohammed Abu-Hadhoud](https://www.linkedin.com/in/abuhadhoud/) \
 *Written by KHALED MAHER* \
 *June 14 2023*  \
 :coffee: :repeat: 
