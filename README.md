@@ -1,12 +1,11 @@
 # programming-advices_foundational-roadmap
 Preserving all belongings of the foundational roadmap curriculum provided by ***Programming Advices*** platform.
 
-### Contains of:
+### Contains:
 
-- Relative Links
-- Homeworks and Assignments 
+- Advanced Techniques and Notes
+- Homework and Assignments 
 - Projects 
-- Notes and Advices
 - Certifications
 ---
 ![Screen shot for the foundations and specializatiob roadmap](https://cdn.fs.teachablecdn.com/oQ1J1p0FRJmJ86YPPKrr)
