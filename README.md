@@ -1,5 +1,5 @@
 # programming-advices_foundational-roadmap
-Preserving all belongings of the foundational roadmap curriculum provided by ***Programming Advices*** platform.
+The most characteristic of these courses is their arrangement, which was based on 30 years of experience, and their containment of software methods that are not found in any other educational place; he doesn't only teach technologies, but also how to use them in their beneficial way, taking advantage of the most  methods, methodologies and implementation mechanisms in these technologies.
 
 ### Contains:
 
