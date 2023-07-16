@@ -3,7 +3,6 @@ The most characteristic of these courses is their arrangement, which was based o
 
 ### Contains:
 
-- Advanced Techniques and Notes
 - Homework and Assignments 
 - Projects 
 - Certifications
