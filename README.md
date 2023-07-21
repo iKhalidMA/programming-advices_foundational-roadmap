@@ -12,7 +12,7 @@ This repo is for saving my modifications branches in our learning academy.
 ![Screen shot for the foundations and specializatiob roadmap](https://cdn.fs.teachablecdn.com/oQ1J1p0FRJmJ86YPPKrr)
 ---
 
-*studied from [ProgrammingAdvices](https://programmingadvices.com/p/roadmap) ~ by Prof.* [Mohammed Abu-Hadhoud](https://www.linkedin.com/in/abuhadhoud/) \
+* [Programming Advices Academy](https://programmingadvices.com/p/roadmap) ~ by Prof.* [Mohammed Abu-Hadhoud](https://www.linkedin.com/in/abuhadhoud/) \
 *Written by KHALED MAHER* \
 *June 14 2023*  \
 :coffee: :repeat: 
