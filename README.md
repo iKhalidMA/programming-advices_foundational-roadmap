@@ -13,5 +13,4 @@ This repo is for saving my modifications branches in our learning academy.
 ---
 
 [Programming Advices Academy](https://programmingadvices.com/p/roadmap) ~ by Prof.[Mohammed Abu-Hadhoud](https://www.linkedin.com/in/abuhadhoud/) \
-[SW KHALED MAHER](https://www.linkedin.com/in/khaldmaher) \
 :coffee: :repeat: 
