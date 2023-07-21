@@ -1,9 +1,10 @@
 # programming-advices_foundational-roadmap
-The most characteristic of these courses is their arrangement, which was based on 30 years of experience, and their containment of software methods that are not found in any other educational place; he doesn't only teach technologies, but also how to use them in their beneficial way, taking advantage of the most  methods, methodologies and implementation mechanisms in these technologies.
+This repo is for saving my modifications branches in our learning academy.
 
 ### Contains:
 
-- Homework and Assignments 
+- Homework and Assignments
+- methodologies and implementation mechanisms in these technologies.
 - Projects 
 - Certifications
 ---
