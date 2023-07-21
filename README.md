@@ -4,12 +4,12 @@ This repo is for saving my modifications branches in our learning academy.
 ### Contains:
 
 - Homework and Assignments
-- methodologies and implementation mechanisms in these technologies.
+- Methodologies and Implementation Mechanisms
 - Projects 
 - Certifications
+- Actionable Ideas "Certainly, you won't see it :))" 
 ---
 ![Screen shot for the foundations and specializatiob roadmap](https://cdn.fs.teachablecdn.com/oQ1J1p0FRJmJ86YPPKrr)
-
 ---
 
 *studied from [ProgrammingAdvices](https://programmingadvices.com/p/roadmap) ~ by Prof.* [Mohammed Abu-Hadhoud](https://www.linkedin.com/in/abuhadhoud/) \
