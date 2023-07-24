@@ -6,7 +6,6 @@
 using namespace std;
 const float PI = 3.14;
 
-
 // problem #1,2    - - -- - - -- - -      Read and Print Name
 string ReadName()
 {
@@ -592,12 +591,10 @@ float calcTotalCommission(float TotalSales)
 }
 
 // problem #35     - - -- - - -- - -      Piggy Bank Calculator
-struct  stPiggyBankCalculator
+struct stPiggyBankCalculator
 {
   int Pennies, Nickels, Dimes, Quarters, Dollars;
-};
-
-stPiggyBankCalculator readPiggyBankContents()
+} stPiggyBankCalculator readPiggyBankContents()
 {
   stPiggyBankCalculator piggyBankContent;
   cout << "Enter total numbers of Pennies ? ";
@@ -618,6 +615,207 @@ int CalcTotalPennies(stPiggyBankCalculator PiggyBankContet)
   totalPennies = PiggyBankContet.Pennies * 1 + PiggyBankContet.Nickels * 5 + PiggyBankContet.Dimes * 10 + PiggyBankContet.Quarters * 25 + PiggyBankContet.Dollars * 100;
   return totalPennies;
 }
+
+// problem #36     - - -- - - -- - -      Simple Calculator
+enum enOperationType
+{
+  Add = '+',
+  Subtract = '-',
+  Multiply = '*',
+  Divide = '/'
+};
+float ReadNumberforOpType(string message)
+{
+  float Number = 0;
+  cout << message;
+  cin >> Number;
+  return Number;
+};
+enOperationType ReadOpType()
+{
+  char optype = '+';
+  cout << "Please Enter Operation type: + , - , *, /";
+  cin >> optype;
+  return (enOperationType)optype;
+};
+float CalcOpType(float num1, float num2, enOperationType optype)
+{
+  switch (optype)
+  {
+  case enOperationType::Add:
+    return num1 + num2;
+  case enOperationType::Subtract:
+    return num1 - num2;
+  case enOperationType::Multiply:
+    return num1 * num2;
+  case enOperationType::Divide:
+    return num1 / num2;
+
+  default:
+    return 0;
+  }
+}
+
+// problem #37     - - -- - - -- - -      Sum Until -99
+float SumNumberss()
+{
+  int Sum = 0, Number = 0, Counterr = 1;
+  do
+  {
+    Number = ReadNumberforOpType("Please Enter a number " + to_string(Counterr));
+    if (Number == -99)
+    {
+      break;
+    }
+    Sum += Number;
+    Counterr++;
+  } while (Number != -99);
+}
+
+// problem #38     - - -- - - -- - -      Prime Numbers
+enum enprime
+{
+  Prime = 1,
+  NotPrime = 2
+};
+float ReadPositiveNumberforPrime(string Message)
+{
+  float Num = 0;
+  do
+  {
+    cout << Message << endl;
+    cin >> Num;
+  } while (Num <= 0);
+  return Num;
+};
+enprime CheckPrime(int Number)
+{
+  int M = round(Number / 2);
+  for (int counter = 2; counter <= M; counter++)
+
+  {
+    if (Number % counter == 0)
+      return enprime::NotPrime;
+  }
+  return enprime::Prime;
+}
+void PrintNumberType(int Num)
+{
+  switch (CheckPrime(Num))
+  {
+  case enprime::Prime:
+    cout << "THE number is prime ";
+    break;
+  case enprime::NotPrime:
+    cout << "the number is not prime";
+    break;
+  }
+}
+
+// problem #39     - - -- - - -- - -      Pay Remainder
+float CalculateRemainder(float RoralBill, float TotalCashPAid)
+{
+  return TotalCashPAid - totalBill;
+}
+
+// problem #40     - - -- - - -- - -      Servive Fee and Sales Tax.
+float TotalBillAfterServiceAndTax(float TotalBill)
+{
+  TotalBill *= 1.1;
+  TotalBill *= 1.16;
+  return TotalBill;
+}
+
+// problem #41     - - -- - - -- - -      Weeks and Days
+float HoursToDays(float NumberOfHours)
+{
+  return (float)NumberOfHours / 24;
+}
+float HoursToWeeks(float NumberOfHours)
+{
+  return (float)NumberOfHours / 24 / 7;
+}
+float DaysToWeeks(float NumberOFDays)
+{
+  return (float)NumberOFDays / 7;
+}
+
+// problem #42     - - -- - - -- - -      Task Duration In Second.
+struct srtTaskDuration
+{
+  int NumOfDays, NumOfHours, NumOfMinutes, NumOfSeconds
+};
+srtTaskDuration ReadTaskDuration()
+{
+  srtTaskDuration TaskDuration;
+  TaskDuration.NumOfDays = ReadPositiveNumber("Enter Number of DAys");
+  TaskDuration.NumOfHours = ReadPositiveNumber("Enter Number of Hours");
+  TaskDuration.NumOfMinutes = ReadPositiveNumber("Enter Number of Minutes");
+  TaskDuration.NumOfSeconds = ReadPositiveNumber("Enter Number of Seconds");
+  return TaskDuration;
+}
+int TaskDurationInSeconds(srtTaskDuration TaskDuration)
+{
+  int DurationInSeconds = 0;
+  DurationInSeconds = TaskDuration.NumOfDays * 24 * 60 * 60;
+  DurationInSeconds += TaskDuration.NumOfHours * 60 * 60;
+  DurationInSeconds += TaskDuration.NumOfMinutes * 60;
+  DurationInSeconds += TaskDuration.NumOfSeconds;
+  return DurationInSeconds;
+}
+
+// problem #46     - - -- - - -- - -      Letters from A to Z
+void PrintLetterAToZ()
+{
+  for (int i = 65; i <= 90; i++)
+  {
+    cout << char(i) << endl;
+  }
+}
+
+// problem #47     - - -- - - -- - -      Loan Amount
+float TotalMonths(float LoanAmount, float MonthlyInstallment)
+{
+  return (float)LoanAmount / MonthlyInstallment;
+}
+
+// problem #48     - - -- - - -- - -      Loa Installment Months
+float MonthlyInstallment(float LoanAmount, float NumOfMonths)
+{
+  return (float)LoanAmount / NumOfMonths;
+}
+
+// problem #49,50  - - -- - - -- - -      ATM PIN
+string ReadPinCode()
+{
+  string PinCOde;
+  cout << "Enter PIN COde";
+  cin >> PinCOde;
+  return PinCOde;
+}
+bool Login()
+
+{
+
+  string PinCode;
+  int Counter = 3;
+  do
+  {
+    Counter--;
+    PinCode = ReadPinCode();
+    if (PinCode == "1234")
+    {
+      return 1;
+    }
+    else
+      system("coloar 4F");
+    cout << "Wrong PIN,, you have " << Counter << "More try" << endl;
+    {
+    }
+  } while (Counter >= 1 && PinCode != "1234");
+  return 0;
+}
+
 int main()
 {
 
@@ -759,6 +957,69 @@ int main()
        << "Total Pennies = " << totalPennies << endl;
   cout << endl
        << "Total Dollars = " << (float)totalPennies / 100 << endl;
+  // problem #36    -- - - --     Simple Calculator
+  float numop1 = ReadNumberforOpType("Please enter num1");
+  float numop2 = ReadNumberforOpType("Please enter num2");
+  enOperationType optype = ReadOpType();
+  cout << endl
+       << "REsult = " << CalcOpType(numop1, numop2, optype);
+
+  // problem #37    -- - - --     Sum Untill -99
+  cout << endl
+       << "RESULT = " << SumNumberss() << endl;
+
+  // problem #38    -- - - --     Prime Number.
+  PrintNumberType(ReadPositiveNumberforPrime("Enter a positive number"));
+
+  // problem #39    -- - - --     Pay Remainder.
+  float totalBill = ReadPositiveNumber("Please Enter Total Bill?");
+  float totalCashPaid = ReadPositiveNumber("Please Enter Total Cash Bill?");
+  cout << endl;
+  cout << "TOtal Bill = " << totalBill << endl;
+  cout << "Total Cash Paid = " << totalCashPaid << endl;
+  cout << "****************************\n";
+  cout << "Remainder = " << CalculatRemainder(TotalBill, TotalCashPaid) << endl;
+
+  // problem #40    -- - - --     Service Fee and Sales Tax.
+  float TotalBill = ReadPositiveNumber("Please Enter Total Bill?");
+  cout << endl;
+  cout << "Total Bill = " << TotalBill << endl;
+  cout << "Total Bill After Service Fee and Sales Tax = " << TotalBillAfterServiceAndTax(TotalBill) << endl;
+
+  // problem #41    -- - - --     Weeks and Days
+
+  // problem #42    -- - - --     Task Duration In Seconds.
+  cout << "Task Duration In Seconds: " << TaskDurationInSeconds(ReadTaskDuration(ReadPositiveNumber()));
+
+  // problem #46    -- - - --     Print Letters from A to Z
+  PrintLetterAToZ();
+
+  // problem #47    -- - - --     Loan Amout
+  float LoanAmount = ReadPositiveNumber("Enter Loan Amount?");
+  float MonthlyInstallment = ReadPositiveNumber("Enter Monthly Installment Amount?");
+  cout << "Total Months to Pay = " << TotalMonths(LoanAmount, MonthlyInstallment) << endl;
+
+  // problem #48    -- - - --     Monthly Loan Installment
+  float LoanAmount = ReadPositiveNumber("Enter Loan Amount?");
+  float HowManyMonths = ReadPositiveNumber("Enter Monthly Installment Amount?");
+  cout << "Monthly Installment = " << MonthlyInstallment(LoanAmount, HowManyMonths) << endl;
+
+  // problem #49    -- - - --     ATM PIN
+  if (Login())
+  {
+    system("color 2F");
+    cout << "your account Balance is " << 0000 << endl;
+  }
+  // problem #50    -- - - --     ATM PIN 3 Times
+  if (Login())
+  {
+    system("color 2F");
+    cout << "your account Balance is " << 0000 << endl;
+  }
+  else
+  {
+    cout << "Your Card Blocked call the bank for help" << endl;
+  }
 
   return 0;
 }
