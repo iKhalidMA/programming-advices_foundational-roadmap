@@ -594,7 +594,8 @@ float calcTotalCommission(float TotalSales)
 struct stPiggyBankCalculator
 {
   int Pennies, Nickels, Dimes, Quarters, Dollars;
-} stPiggyBankCalculator readPiggyBankContents()
+};
+stPiggyBankCalculator readPiggyBankContents()
 {
   stPiggyBankCalculator piggyBankContent;
   cout << "Enter total numbers of Pennies ? ";
@@ -713,9 +714,9 @@ void PrintNumberType(int Num)
 }
 
 // problem #39     - - -- - - -- - -      Pay Remainder
-float CalculateRemainder(float RoralBill, float TotalCashPAid)
+float CalculateRemainder(float TotalBill, float TotalCashPAid)
 {
-  return TotalCashPAid - totalBill;
+  return TotalCashPAid - TotalBill;
 }
 
 // problem #40     - - -- - - -- - -      Servive Fee and Sales Tax.
@@ -743,7 +744,7 @@ float DaysToWeeks(float NumberOFDays)
 // problem #42     - - -- - - -- - -      Task Duration In Second.
 struct srtTaskDuration
 {
-  int NumOfDays, NumOfHours, NumOfMinutes, NumOfSeconds
+  int NumOfDays, NumOfHours, NumOfMinutes, NumOfSeconds;
 };
 srtTaskDuration ReadTaskDuration()
 {
@@ -978,7 +979,7 @@ int main()
   cout << "TOtal Bill = " << totalBill << endl;
   cout << "Total Cash Paid = " << totalCashPaid << endl;
   cout << "****************************\n";
-  cout << "Remainder = " << CalculatRemainder(TotalBill, TotalCashPaid) << endl;
+  cout << "Remainder = " << CalculateRemainder(totalBill, totalCashPaid) << endl;
 
   // problem #40    -- - - --     Service Fee and Sales Tax.
   float TotalBill = ReadPositiveNumber("Please Enter Total Bill?");
@@ -989,15 +990,15 @@ int main()
   // problem #41    -- - - --     Weeks and Days
 
   // problem #42    -- - - --     Task Duration In Seconds.
-  cout << "Task Duration In Seconds: " << TaskDurationInSeconds(ReadTaskDuration(ReadPositiveNumber()));
+  cout << "Task Duration In Seconds: " << TaskDurationInSeconds(ReadTaskDuration());
 
   // problem #46    -- - - --     Print Letters from A to Z
   PrintLetterAToZ();
 
   // problem #47    -- - - --     Loan Amout
   float LoanAmount = ReadPositiveNumber("Enter Loan Amount?");
-  float MonthlyInstallment = ReadPositiveNumber("Enter Monthly Installment Amount?");
-  cout << "Total Months to Pay = " << TotalMonths(LoanAmount, MonthlyInstallment) << endl;
+  float MonthlyInstallmentt = ReadPositiveNumber("Enter Monthly Installment Amount?");
+  cout << "Total Months to Pay = " << TotalMonths(LoanAmount, MonthlyInstallmentt) << endl;
 
   // problem #48    -- - - --     Monthly Loan Installment
   float LoanAmount = ReadPositiveNumber("Enter Loan Amount?");
@@ -1019,7 +1020,7 @@ int main()
   else
   {
     cout << "Your Card Blocked call the bank for help" << endl;
-  }
+  };
 
   return 0;
 }
