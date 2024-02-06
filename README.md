@@ -5,11 +5,10 @@
 
 ### Contains:
 
+- Programming Methodologies and Implementation Mechanisms
 - Homework and Assignments
-- Methodologies and Implementation Mechanisms
 - Projects 
 - Certifications
-- Actionable Ideas "Certainly, you won't see it :))" 
 ---
 ![Screen shot for the foundations and specializatiob roadmap](https://cdn.fs.teachablecdn.com/oQ1J1p0FRJmJ86YPPKrr)
 ---
