@@ -1,9 +1,30 @@
 #include <iostream>
-#include <ctdlib>
 using namespace std;
 
 enum enQuestionLevel { easyLevel = 1 , medLevel = 2, hardLevel =3 , mix =4};
 enum enOperationType { add = 1 , sub = 2, mult =3 ,div =4, mixOp=5};
+
+string getOpTypeSymbol(enOperationType OpType) {
+	switch (OpType)
+	{
+	case enOperationType::add:
+		return "+";
+	case enOperationType::sub:
+		return "-";
+	case enOperationType::mult:
+		return "*";
+	case enOperationType::div:
+		return "/";
+	default:
+		return "mix";
+	}
+}
+
+// get results from an array instead pf switch case statements:
+string getQuestionLevelText(enQuestionLevel quesLvel) {
+	string arrQuesLEvelText[4]{ "easy" , "Med" ,"Hrd ", "Mix" };
+	return arrQuesLEvelText[quesLvel - 1];
+}
 
 short readHowManyQuestions() {
 	short num = 0;
@@ -13,6 +34,16 @@ short readHowManyQuestions() {
 		
 	} while (num < 1 || num > 10);
 	return num;
+}
+void setScreenColor(bool Right) {
+	if (Right)
+		system("color 2F");
+	else {
+		system("color 4F");
+		cout << "\a";
+	}
+		
+
 }
 
 enQuestionLevel readQustionLevel(){
@@ -132,6 +163,15 @@ void correctTheQuestionAnswer(stQuizz& quizz, short questionNumber)
 	if (quizz.quesList[questionNumber].playerAnswer != quizz.quesList[questionNumber].correctAnswer) {
 		quizz.quesList[questionNumber].answerResult = false;
 		quizz.noOfWrongAnswers++;
+		cout << "Wron Answer :(\n";
+		cout << "the right question is :(\n";
+		cout << quizz.quesList[questionNumber].correctAnswer;
+		cout << endl;
+
+	}
+	else {
+		quizz.quesList[questionNumber].answerResult = true;
+		q
 	}
 
 }
@@ -142,7 +182,8 @@ void askCorrectQuestionListAnswers(stQuizz& quizz) {
 		quizz.quesList[i].playerAnswer = readQuestionAnswer();
 		correctTheQuestionAnswer(quizz, i);
 	}
-	quizz.isPass = (quizz.noOFRightAnswers>= quizz.noOfWrongAnswers)
+	quizz.isPass = (quizz.noOFRightAnswers >= quizz.noOfWrongAnswers);
+
 }
 
 void generateQuizzQuestion (stQuizz & quizz){
@@ -152,6 +193,29 @@ void generateQuizzQuestion (stQuizz & quizz){
 	}
 }
 
+string getFinalResutlsText(bool Pass) {
+	if (Pass)
+		return "Pass :-)";
+	else
+		return "Fail :-(";
+
+}
+
+void printQuizzResults(stQuizz Quizz)
+{
+	cout << endl;
+	cout << "____________________\n\n";
+	cout << " Final Results is " << getFinalResutlsText(Quizz.isPass);
+	cout << "____________________\n\n";
+
+	cout << "Number of Questions: " << Quizz.numberOfQues << endl;
+	cout << "Number of Questions: " << getQuestionLevelText(Quizz.quesLevel)<< endl;
+	cout << "operation Type     : " << getOpTypeSymbol(Quizz.opType)<< endl;
+	cout << "Number of right Answer: " << Quizz.noOFRightAnswers<< endl;
+	cout << "Number of wrong Answer: " << Quizz.noOfWrongAnswers<< endl;
+	cout << "____________________\n\n";
+}
+
 void playMathGame() {
 	stQuizz quizz;
 
@@ -159,6 +223,8 @@ void playMathGame() {
 	quizz.quesLevel = readQustionLevel();
 	quizz.opType = readOperationType();
 	generateQuizzQuestion(quizz);
+	askCorrectQuestionListAnswers(quizz);
+	printQuizzResults(quizz);
 	
 
 
@@ -169,7 +235,7 @@ void resetScreen() {
 	system("color 0F");
 }
 
-void stratGame() {
+void startGame() {
 	char playAgain = 'Y';
 
 	do
@@ -182,5 +248,6 @@ void stratGame() {
 int main()
 {
 	srand((unsigned)time(NULL));
+	startGame();
 
 }
