@@ -116,6 +116,35 @@ stQuestion generateQuestion(enQuestionLevel quesLevel, enOperationType opType) {
 
 }
 
+int readQuestionAnswer() {
+	int answer;
+	cin >> answer;
+	return answer;
+}
+void printTheQuestion(stQuizz& quizz, short questionNumber) {
+	cout << endl;
+	cout << "Question [" << questionNumber + 1 << "/" << quizz.numberOfQues << "]" << "\n\n";
+	cout << quizz.quesList[questionNumber].num1 << endl;
+	cout << quizz.quesList[questionNumber].num2 << " ";
+};
+void correctTheQuestionAnswer(stQuizz& quizz, short questionNumber)
+{
+	if (quizz.quesList[questionNumber].playerAnswer != quizz.quesList[questionNumber].correctAnswer) {
+		quizz.quesList[questionNumber].answerResult = false;
+		quizz.noOfWrongAnswers++;
+	}
+
+}
+void askCorrectQuestionListAnswers(stQuizz& quizz) {
+	for (short i = 0; i < quizz.numberOfQues; i++)
+	{
+		printTheQuestion(quizz, i);
+		quizz.quesList[i].playerAnswer = readQuestionAnswer();
+		correctTheQuestionAnswer(quizz, i);
+	}
+	quizz.isPass = (quizz.noOFRightAnswers>= quizz.noOfWrongAnswers)
+}
+
 void generateQuizzQuestion (stQuizz & quizz){
 	for (short  question  = 0; question  < quizz.numberOfQues ; question ++)
 	{
@@ -129,6 +158,8 @@ void playMathGame() {
 	quizz.numberOfQues = readHowManyQuestions();
 	quizz.quesLevel = readQustionLevel();
 	quizz.opType = readOperationType();
+	generateQuizzQuestion(quizz);
+	
 
 
 }
