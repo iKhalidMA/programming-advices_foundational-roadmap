@@ -1,7 +1,9 @@
 #include <iostream>
+#include <ctdlib>
 using namespace std;
+
 enum enQuestionLevel { easyLevel = 1 , medLevel = 2, hardLevel =3 , mix =4};
-enum enOperationType { add = 1 , sub = 2, mult =2 ,div =4, mixOp=5};
+enum enOperationType { add = 1 , sub = 2, mult =3 ,div =4, mixOp=5};
 
 short readHowManyQuestions() {
 	short num = 0;
@@ -33,7 +35,8 @@ struct stQuestion {
 	int num1 = 0;
 	int num2 = 0;
 	
-
+	enOperationType opType;
+	enQuestionLevel quesLevel;
 	int correctAnswer = 0;
 	int playerAnswer = 0;
 	bool answerResult = false;
@@ -49,6 +52,76 @@ struct stQuizz {
 
 
 };
+
+int randomNumber(int from, int to) {
+	int randNum = rand() % (to - from + 1) + from;
+	return randNum;
+}
+enOperationType getRandomOpType() {
+	int op = randomNumber (1,4);
+	return (enOperationType)op;
+}
+
+int simpleCalculator(int num1, int num2, enOperationType opType) {
+	switch (opType)
+	{
+	case enOperationType::add:
+		return num1 + num2;
+	case enOperationType::sub:
+		return num1 - num2;
+	case enOperationType::mult:
+		return num1 * num2;
+	case enOperationType::div:
+		return num1 / num2;
+	case enOperationType::mixOp:
+	default:
+		return num1 + num2;
+		
+	}
+}
+stQuestion generateQuestion(enQuestionLevel quesLevel, enOperationType opType) {
+	stQuestion question;
+	if (quesLevel == enQuestionLevel::mix)
+	{
+		quesLevel = (enQuestionLevel) randomNumber(1, 3);
+	}
+	if (opType == enOperationType::mixOp)
+	{
+		opType = getRandomOpType();
+	}
+	question.opType = opType;
+
+	switch (quesLevel)
+	{
+	case enQuestionLevel::easyLevel:
+		question.num1 = randomNumber(1, 10);
+		question.num2 = randomNumber(1, 10);
+		question.correctAnswer = simpleCalculator(question.num1, question.num2, question.opType);
+		question.quesLevel = quesLevel;
+		return question;
+	case enQuestionLevel::medLevel:
+		question.num1 = randomNumber(35, 85);
+		question.num2 = randomNumber(10, 30);
+		question.correctAnswer = simpleCalculator(question.num1, question.num2, question.opType);
+		question.quesLevel = quesLevel;
+		return question;
+	case enQuestionLevel::hardLevel:
+		question.num1 = randomNumber(70, 100);
+		question.num2 = randomNumber(40,69);
+		question.correctAnswer = simpleCalculator(question.num1, question.num2, question.opType);
+		question.quesLevel = quesLevel;
+		return question;
+	}
+	return question;
+
+}
+
+void generateQuizzQuestion (stQuizz & quizz){
+	for (short  question  = 0; question  < quizz.numberOfQues ; question ++)
+	{
+		quizz.quesList[question] = generateQuestion(quizz.quesLevel, quizz.opType);
+	}
+}
 
 void playMathGame() {
 	stQuizz quizz;
@@ -72,7 +145,7 @@ void stratGame() {
 	{
 		resetScreen();
 		playMathGame();
-		cout <<endl <<"Do You want to play Again y/n;"
+		cout << endl << "Do You want to play Again y/n";
 	} while (playAgain == 'Y'|| playAgain =='y');
 }
 int main()
